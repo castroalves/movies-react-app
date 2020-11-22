@@ -51,7 +51,7 @@ function HomePage() {
                 <p className="my-4">Here you can find all the movies we have in our marketplace</p>
                 <form id="search-form" onSubmit={handleFormSubmit}>
                     <input
-                        className="w-full md:w-1/2 p-3 rounded-sm border border-gray-400 bg-gray-600 text-gray-200 outline-none"
+                        className="w-full md:w-1/2 p-3 rounded-sm border border-gray-400 bg-gray-600 text-gray-200 outline-none hover:opacity-70 focus:opacity-70"
                         type="search"
                         name="search"
                         placeholder="Search for a movie, try 'Blade Runner'"
@@ -60,7 +60,7 @@ function HomePage() {
                 </form>
             </header>
             <div className="container mx-auto p-4">
-                <h3 className="text-left font-semibold text-2xl mb-2">Popular Movies</h3>
+                {/* <h3 className="text-left font-semibold text-3xl mb-4">Popular Movies</h3> */}
                 <div className="games-list grid gap-4 md:grid-cols-4">
                     <Movie data={movies} />
                 </div>

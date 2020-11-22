@@ -34,7 +34,7 @@ function MoviePage() {
                     <h1 className="text-indigo-400 text-6xl font-bold my-4">OMDb React App</h1>
                 </header>
                 <div>
-                    <Link to="/"><button className="bg-indigo-700 px-4 py-2 mb-4 font-bold shadow-md">Go back</button></Link>
+                    <Link to="/"><button className="bg-indigo-700 hover:opacity-90 px-4 py-2 mb-4 font-bold shadow-md">Go back</button></Link>
                 </div>
                 <div className="flex flex-nowrap">
                     <div className="movie-poster w-1/3 rounded overflow-hidden shadow-xl">

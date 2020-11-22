@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Movie({ data }) {
 
     return data.map(movie => (
-        <div key={movie.imdbID} className="rounded overflow-hidden shadow-md relative">
+        <div key={movie.imdbID} className="rounded overflow-hidden shadow-md relative transition duration-200 ease-in-out transform-gpu hover:scale-105">
             <Link to={{pathname: `/movie/${movie.imdbID}`}}>
                 <img
                     alt={movie.Title}
