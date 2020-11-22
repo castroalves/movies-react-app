@@ -11,7 +11,7 @@ function MoviePage() {
     useEffect(() => {
         const fetchMovie = () => {
 
-            fetch(`http://www.omdbapi.com/?apikey=31f9bccf&i=${id}&plot=full`)
+            fetch(`https://www.omdbapi.com/?apikey=31f9bccf&i=${id}&plot=full`)
                 .then(res => res.json())
                 .then(data => {
                     setMovie(data);

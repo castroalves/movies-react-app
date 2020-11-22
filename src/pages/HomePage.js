@@ -15,7 +15,7 @@ function HomePage() {
 
         setKeyword(keyword);
 
-        fetch(`http://www.omdbapi.com/?apikey=31f9bccf&s=${keyword}`)
+        fetch(`https://www.omdbapi.com/?apikey=31f9bccf&s=${keyword}`)
             .then(res => res.json())
             .then(data => {
                 setMovies(data.Search);
