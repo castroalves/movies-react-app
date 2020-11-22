@@ -20,7 +20,7 @@ function MoviePage() {
                 .catch(error => console.error(error));
         };
         fetchMovie();
-    }, []);
+    }, [id]);
 
     return (
         <div className="container mx-auto my-4">
