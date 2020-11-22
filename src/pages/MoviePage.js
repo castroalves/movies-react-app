@@ -8,19 +8,17 @@ function MoviePage() {
     const [movie, setMovie] = useState([]);
     const [genres, setGenres] = useState([]);
 
-    const fetchMovie = () => {
-
-        fetch(`http://www.omdbapi.com/?apikey=31f9bccf&i=${id}&plot=full`)
-            .then(res => res.json())
-            .then(data => {
-                setMovie(data);
-                setGenres(data.Genre.split(', '));
-            })
-            .catch(error => console.error(error));
-    };
-
-
     useEffect(() => {
+        const fetchMovie = () => {
+
+            fetch(`http://www.omdbapi.com/?apikey=31f9bccf&i=${id}&plot=full`)
+                .then(res => res.json())
+                .then(data => {
+                    setMovie(data);
+                    setGenres(data.Genre.split(', '));
+                })
+                .catch(error => console.error(error));
+        };
         fetchMovie();
     }, []);
 
