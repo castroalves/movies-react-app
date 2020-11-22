@@ -46,6 +46,7 @@ function HomePage() {
     return (
         <div className="App flex flex-col">
             <header className="header flex flex-col p-4">
+                <h1 className="text-indigo-400 text-6xl font-bold my-4">OMDb React App</h1>
                 <h2 className="text-gray-200 text-4xl font-semibold my-4">Select Your Movie</h2>
                 <p className="my-4">Here you can find all the movies we have in our marketplace</p>
                 <form id="search-form" onSubmit={handleFormSubmit}>
