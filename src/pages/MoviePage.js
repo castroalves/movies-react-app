@@ -6,6 +6,7 @@ function MoviePage() {
     let { id } = useParams();
 
     const [movie, setMovie] = useState([]);
+    const [genres, setGenres] = useState([]);
 
     const fetchMovie = () => {
 
@@ -13,6 +14,7 @@ function MoviePage() {
             .then(res => res.json())
             .then(data => {
                 setMovie(data);
+                setGenres(data.Genre.split(', '));
             })
             .catch(error => console.error(error));
     };
@@ -23,9 +25,9 @@ function MoviePage() {
     }, []);
 
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto my-4">
             <div>
-                <Link to="/">Back home</Link>
+                <Link to="/"><button className="bg-indigo-700 px-4 py-2 mb-4 font-bold shadow-md">Go back</button></Link>
             </div>
             <div className="flex flex-nowrap">
                 <div className="movie-poster w-1/3 rounded overflow-hidden shadow-xl">
@@ -33,9 +35,13 @@ function MoviePage() {
                 </div>
                 <div className="movie-info w-2/3 p-4">
                     <h1 className="movie-title text-4xl font-bold py-2">{movie.Title}</h1>
-                    <div className="movie-rating py-2">Rating: {movie.imdbRating}</div>
+                    <div className="movie-rating py-2">
+                        <span className="bg-green-600 ml-2 px-4 py-2 rounded-full shadow-md">{movie.imdbRating}</span>
+                    </div>
                     <div className="movie-description py-2">{movie.Plot}</div>
-                    <div className="movie-genre py-2">{movie.Genre}</div>
+                    <div className="movie-genre py-2">{genres.map(genre => (
+                        <span key={genre} className="bg-indigo-700 px-4 py-2 mr-2 rounded-full shadow-md">{genre}</span>
+                    ))}</div>
                 </div>
             </div>
         </div>
